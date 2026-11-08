@@ -25,6 +25,8 @@ def predict(model: KMeans, scaler: StandardScaler, lat: float, lng: float) -> di
         - 'cluster': int — índice do cluster mais próximo
         - 'distance_km': float — distância em km ao centróide (arredondado em 4 casas)
     """
+    
+    
     point_scaled = scaler.transform([[lat, lng]])
     cluster = int(model.predict(point_scaled)[0])
 

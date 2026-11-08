@@ -1,66 +1,125 @@
-# mlops-pipeline
+# MLOps Pipeline
 
-Autor: Marcos Veronez
+**Autor:** Marcos Veronez
 
-Projeto gerado como parte do exercício de modularização do curso de MLOps.
+Projeto desenvolvido como parte dos estudos de MLOps, com foco na organização, modularização e execução de um pipeline de Machine Learning.
 
-## Estrutura
+A proposta é estruturar as diferentes etapas do fluxo de aprendizado de máquina em módulos independentes, facilitando a manutenção, reutilização e evolução do código.
 
-```
-{{cookiecutter.project_name}}/
+## 📁 Organização do projeto
+
+```text
+mlops-pipeline/
+│
 ├── data/
 │   └── raw/
-│       └── points.csv       # gerado pelo generate_data.py
+│       └── points.csv
+│
 ├── src/
-│   ├── data.py              # carregamento e preparação dos dados
-│   ├── train.py             # treinamento do modelo
-│   ├── evaluate.py          # avaliação do modelo
-│   └── predict.py           # predição
+│   ├── data.py
+│   ├── train.py
+│   ├── evaluate.py
+│   └── predict.py
+│
 ├── outputs/
-│   └── metrics.json         # gerado pelo main.py
+│   └── metrics.json
+│
 ├── generate_data.py
 ├── main.py
 └── requirements.txt
 ```
 
-## Como executar
+### Componentes principais
 
-1. Instalar dependências:
-   ```bash
-   pip install -r requirements.txt
-   ```
+| Arquivo / Diretório | Responsabilidade |
+|---|---|
+| `data/` | Armazenamento dos dados utilizados pelo pipeline. |
+| `src/data.py` | Leitura, tratamento e preparação dos dados. |
+| `src/train.py` | Implementação do treinamento do modelo. |
+| `src/evaluate.py` | Avaliação do desempenho do modelo. |
+| `src/predict.py` | Geração de previsões a partir do modelo treinado. |
+| `outputs/` | Armazenamento dos resultados gerados. |
+| `generate_data.py` | Criação da base de dados utilizada no projeto. |
+| `main.py` | Orquestração e execução do pipeline. |
+| `requirements.txt` | Relação das dependências necessárias. |
 
-2. Gerar os dados:
-   ```bash
-   python generate_data.py
-   ```
+## ⚙️ Instalação e configuração
 
-3. Implementar os módulos em `src/` (ver enunciado do exercício)
+Clone o repositório e acesse o diretório do projeto.
 
-4. Executar o pipeline:
-   ```bash
-   python main.py
-   ```
+Instale as dependências necessárias:
 
-## Como subir no GitHub
+```bash
+pip install -r requirements.txt
+```
 
-Usando HTTP:
+## ▶️ Execução
+
+O pipeline deve ser executado seguindo a sequência abaixo.
+
+**1. Preparação dos dados**
+
+Gere a base de dados de entrada:
+
+```bash
+python generate_data.py
+```
+
+O arquivo `points.csv` será criado em `data/raw/`.
+
+**2. Implementação dos módulos**
+
+Implemente as funcionalidades de processamento, treinamento, avaliação e predição nos respectivos arquivos do diretório `src/`, conforme as especificações do exercício.
+
+**3. Execução do pipeline**
+
+Inicie o fluxo completo através do arquivo principal:
+
+```bash
+python main.py
+```
+
+Os resultados da execução serão disponibilizados no diretório `outputs/`, incluindo as métricas de avaliação em formato JSON.
+
+## 🔗 Publicação no GitHub
+
+Para disponibilizar o projeto, inicialize o repositório Git e configure o endereço remoto.
+
+**Opção A — HTTPS**
 
 ```bash
 git init
 git add .
-git commit -m "exercicio de modularizacao"
-git remote add origin https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_name}}.git
+git commit -m "Initial project structure"
+git branch -M main
+git remote add origin https://github.com/marcosavdl/mlops-pipeline.git
 git push -u origin main
 ```
 
-OU usando SSH:
+**Opção B — SSH**
+
 ```bash
 git init
 git add .
-git commit -m "exercicio de modularizacao"
-git remote add origin git@github.com:{{cookiecutter.github_username}}/{{cookiecutter.project_name}}.git
+git commit -m "Initial project structure"
+git branch -M main
+git remote add origin git@github.com:marcosavdl/mlops-pipeline.git
 git push -u origin main
 ```
 
-O repositório deve ser **público** para que a correção automática funcione.
+Substitua `marcosavdl` pelo nome da sua conta no GitHub.
+
+> **Importante:** mantenha o repositório com visibilidade pública (*Public*), pois a correção automatizada do exercício depende do acesso público ao código.
+
+---
+
+## 🎯 Objetivo de aprendizagem
+
+Este projeto busca consolidar conceitos fundamentais de MLOps, especialmente:
+
+- Modularização de aplicações de Machine Learning.
+- Separação de responsabilidades entre componentes.
+- Organização de estruturas de projetos Python.
+- Automatização da execução de pipelines.
+- Registro e armazenamento de métricas de avaliação.
+- Versionamento e publicação de código utilizando Git e GitHub.
