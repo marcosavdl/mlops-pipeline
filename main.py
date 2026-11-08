@@ -16,7 +16,8 @@ def main():
     features, scaler = prepare_features(points)
 
     # 3. Treinar modelo
-    model = train_model(features, n_clusters=5)
+    #model = train_model(features, n_clusters=5)
+    model = train_model(features, n_clusters=5, random_state=42)
 
     # 4. Avaliar
     metrics = evaluate_model(model, features)

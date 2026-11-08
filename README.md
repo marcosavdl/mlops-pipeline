@@ -1,6 +1,6 @@
-# {{cookiecutter.project_name}}
+# mlops-pipeline
 
-Autor: {{cookiecutter.author_name}}
+Autor: Marcos Veronez
 
 Projeto gerado como parte do exercício de modularização do curso de MLOps.
 

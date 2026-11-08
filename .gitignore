@@ -1,0 +1,130 @@
+
+# ==========================================
+# Python - Cache e arquivos compilados
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.python-version
+
+# ==========================================
+# Ambientes virtuais
+# ==========================================
+.venv/
+venv/
+env/
+ENV/
+virtualenv/
+.conda/
+conda-env/
+
+# ==========================================
+# Distribuição e empacotamento
+# ==========================================
+build/
+dist/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+.eggs/
+
+# ==========================================
+# Testes e cobertura
+# ==========================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+coverage.xml
+nosetests.xml
+junit.xml
+
+# ==========================================
+# Linters e formatadores
+# ==========================================
+.mypy_cache/
+.dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# ==========================================
+# Jupyter Notebook
+# ==========================================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# ==========================================
+# IDEs e editores
+# ==========================================
+.vscode/
+.idea/
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# ==========================================
+# Sistema operacional
+# ==========================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==========================================
+# Logs e arquivos temporários
+# ==========================================
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
+
+# ==========================================
+# Variáveis de ambiente e credenciais
+# ==========================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials.json
+
+# ==========================================
+# Configurações locais
+# ==========================================
+local_settings.py
+instance/
+
+# ==========================================
+# Modelos e artefatos de Machine Learning
+# ==========================================
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.h5
+*.keras
+*.pkl
+*.pickle
+*.joblib
+*.safetensors
+
+# ==========================================
+# Cache de ferramentas de ML / MLOps
+# ==========================================
+.mlflow/
+wandb/
+lightning_logs/
+tensorboard/
+runs/

@@ -25,4 +25,18 @@ def predict(model: KMeans, scaler: StandardScaler, lat: float, lng: float) -> di
         - 'cluster': int — índice do cluster mais próximo
         - 'distance_km': float — distância em km ao centróide (arredondado em 4 casas)
     """
-    pass
+    point_scaled = scaler.transform([[lat, lng]])
+    cluster = int(model.predict(point_scaled)[0])
+
+    centroid_scaled = model.cluster_centers_[cluster]
+    centroid_original = scaler.inverse_transform([centroid_scaled])[0]
+
+    distance_km = geopy.distance.geodesic(
+        (lat, lng),
+        (centroid_original[0], centroid_original[1])
+    ).km
+
+    return {
+        "cluster": cluster,
+        "distance_km": round(distance_km, 4)
+    }
